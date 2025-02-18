@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const PinContainer = ({
   children,
-  title,
+  // title,
   href,
   className,
   containerClassName,
@@ -63,7 +63,7 @@ export const PinContainer = ({
 };
 
 export const PinPerspective = ({
-  title,
+  // title,
   href,
 }: {
   title?: string;

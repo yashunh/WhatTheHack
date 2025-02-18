@@ -4,8 +4,8 @@ export default function ThemePage() {
       <h1 className="text-4xl font-bold mb-6">Our Theme</h1>
       <div className="space-y-8">
         <p className="text-lg text-muted-foreground">
-          Reflect's theme is designed to provide a calm, focused environment for your thoughts. 
-          Our dark mode with purple accents creates a soothing atmosphere that's easy on the eyes, 
+          Reflect&apos;s theme is designed to provide a calm, focused environment for your thoughts. 
+          Our dark mode with purple accents creates a soothing atmosphere that&apos;s easy on the eyes, 
           allowing you to concentrate on what matters most - your ideas.
         </p>
         <div>

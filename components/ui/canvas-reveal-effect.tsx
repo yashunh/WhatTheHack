@@ -4,6 +4,22 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import React, { useMemo, useRef } from "react";
 import * as THREE from "three";
 
+// Define types for the shader material
+interface CustomShaderMaterial extends THREE.ShaderMaterial {
+  uniforms: {
+    u_time: { value: number };
+    u_resolution: { value: THREE.Vector2 };
+    [key: string]: { 
+      value: number | number[] | THREE.Vector2 | THREE.Vector3 | THREE.Vector3[];
+      type?: string;
+    };
+  };
+}
+
+interface MeshWithCustomMaterial extends THREE.Mesh {
+  material: CustomShaderMaterial;
+}
+
 export const CanvasRevealEffect = ({
   animationSpeed = 0.4,
   opacities = [0.3, 0.3, 0.3, 0.5, 0.5, 0.5, 0.8, 0.8, 0.8, 1],
@@ -12,10 +28,6 @@ export const CanvasRevealEffect = ({
   dotSize,
   showGradient = true,
 }: {
-  /**
-   * 0.1 - slower
-   * 1.0 - faster
-   */
   animationSpeed?: number;
   opacities?: number[];
   colors?: number[][];
@@ -57,6 +69,18 @@ interface DotMatrixProps {
   center?: ("x" | "y")[];
 }
 
+type UniformValue = number | number[] | number[][];
+type UniformType = "uniform1f" | "uniform3f" | "uniform1fv" | "uniform3fv" | "uniform2f";
+
+interface Uniform {
+  value: UniformValue;
+  type: UniformType;
+}
+
+interface Uniforms {
+  [key: string]: Uniform;
+}
+
 const DotMatrix: React.FC<DotMatrixProps> = ({
   colors = [[0, 0, 0]],
   opacities = [0.04, 0.04, 0.04, 0.04, 0.04, 0.08, 0.08, 0.08, 0.08, 0.14],
@@ -65,7 +89,7 @@ const DotMatrix: React.FC<DotMatrixProps> = ({
   shader = "",
   center = ["x", "y"],
 }) => {
-  const uniforms = React.useMemo(() => {
+  const uniforms = useMemo(() => {
     let colorsArray = [
       colors[0],
       colors[0],
@@ -115,7 +139,7 @@ const DotMatrix: React.FC<DotMatrixProps> = ({
         value: dotSize,
         type: "uniform1f",
       },
-    };
+    } as Uniforms;
   }, [colors, opacities, totalSize, dotSize]);
 
   return (
@@ -175,44 +199,24 @@ const DotMatrix: React.FC<DotMatrixProps> = ({
   );
 };
 
-type Uniforms = {
-  [key: string]: {
-    value: number[] | number[][] | number;
-    type: string;
-  };
-};
 const ShaderMaterial = ({
   source,
   uniforms,
   maxFps = 60,
 }: {
   source: string;
-  hovered?: boolean;
-  maxFps?: number;
   uniforms: Uniforms;
+  maxFps?: number;
 }) => {
   const { size } = useThree();
-  const ref = useRef<THREE.Mesh>();
+  const ref = useRef<MeshWithCustomMaterial>(null);
   let lastFrameTime = 0;
 
-  useFrame(({ clock }) => {
-    if (!ref.current) return;
-    const timestamp = clock.getElapsedTime();
-    if (timestamp - lastFrameTime < 1 / maxFps) {
-      return;
-    }
-    lastFrameTime = timestamp;
-
-    const material: any = ref.current.material;
-    const timeLocation = material.uniforms.u_time;
-    timeLocation.value = timestamp;
-  });
-
-  const getUniforms = () => {
-    const preparedUniforms: any = {};
+  const getUniforms = useMemo(() => {
+    const preparedUniforms: Record<string, { value: unknown; type?: string }> = {};
 
     for (const uniformName in uniforms) {
-      const uniform: any = uniforms[uniformName];
+      const uniform = uniforms[uniformName];
 
       switch (uniform.type) {
         case "uniform1f":
@@ -220,7 +224,7 @@ const ShaderMaterial = ({
           break;
         case "uniform3f":
           preparedUniforms[uniformName] = {
-            value: new THREE.Vector3().fromArray(uniform.value),
+            value: new THREE.Vector3().fromArray(uniform.value as number[]),
             type: "3f",
           };
           break;
@@ -229,7 +233,7 @@ const ShaderMaterial = ({
           break;
         case "uniform3fv":
           preparedUniforms[uniformName] = {
-            value: uniform.value.map((v: number[]) =>
+            value: (uniform.value as number[][]).map((v) =>
               new THREE.Vector3().fromArray(v)
             ),
             type: "3fv",
@@ -237,7 +241,7 @@ const ShaderMaterial = ({
           break;
         case "uniform2f":
           preparedUniforms[uniformName] = {
-            value: new THREE.Vector2().fromArray(uniform.value),
+            value: new THREE.Vector2().fromArray(uniform.value as number[]),
             type: "2f",
           };
           break;
@@ -250,13 +254,25 @@ const ShaderMaterial = ({
     preparedUniforms["u_time"] = { value: 0, type: "1f" };
     preparedUniforms["u_resolution"] = {
       value: new THREE.Vector2(size.width * 2, size.height * 2),
-    }; // Initialize u_resolution
+    };
+    
     return preparedUniforms;
-  };
+  }, [uniforms, size.width, size.height]);
 
-  // Shader material
+  useFrame(({ clock }) => {
+    if (!ref.current) return;
+    const timestamp = clock.getElapsedTime();
+    if (timestamp - lastFrameTime < 1 / maxFps) {
+      return;
+    }
+    lastFrameTime = timestamp;
+
+    const material = ref.current.material;
+    material.uniforms.u_time.value = timestamp;
+  });
+
   const material = useMemo(() => {
-    const materialObject = new THREE.ShaderMaterial({
+    return new THREE.ShaderMaterial({
       vertexShader: `
       precision mediump float;
       in vec2 coordinates;
@@ -271,23 +287,27 @@ const ShaderMaterial = ({
       }
       `,
       fragmentShader: source,
-      uniforms: getUniforms(),
+      uniforms: getUniforms,
       glslVersion: THREE.GLSL3,
       blending: THREE.CustomBlending,
       blendSrc: THREE.SrcAlphaFactor,
       blendDst: THREE.OneFactor,
     });
-
-    return materialObject;
-  }, [size.width, size.height, source]);
+  }, [source, getUniforms]);
 
   return (
-    <mesh ref={ref as any}>
+    <mesh ref={ref}>
       <planeGeometry args={[2, 2]} />
       <primitive object={material} attach="material" />
     </mesh>
   );
 };
+
+interface ShaderProps {
+  source: string;
+  uniforms: Uniforms;
+  maxFps?: number;
+}
 
 const Shader: React.FC<ShaderProps> = ({ source, uniforms, maxFps = 60 }) => {
   return (
@@ -296,13 +316,3 @@ const Shader: React.FC<ShaderProps> = ({ source, uniforms, maxFps = 60 }) => {
     </Canvas>
   );
 };
-interface ShaderProps {
-  source: string;
-  uniforms: {
-    [key: string]: {
-      value: number[] | number[][] | number;
-      type: string;
-    };
-  };
-  maxFps?: number;
-}

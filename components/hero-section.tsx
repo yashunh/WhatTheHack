@@ -6,7 +6,7 @@ import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 
 import { cn } from "@/lib/utils";
 import { BackgroundLines } from "./ui/background-lines";
-import { SparklesPreview } from "./ui/sparkles-preview";
+// import { SparklesPreview } from "./ui/sparkles-preview";
 
 export function HeroSection() {
   return (

@@ -30,7 +30,7 @@ export function TeamSection() {
           className=""
         >
           <p className="text-lg text-muted-foreground text-center">
-            The Reflect team is a diverse group of thinkers, creators, and problem-solvers. We're united by our passion
+            The Reflect team is a diverse group of thinkers, creators, and problem-solvers. We&apos;re united by our passion
             for building tools that enhance human cognition and creativity.
           </p>
         </motion.div>

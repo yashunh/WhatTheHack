@@ -3,7 +3,7 @@ export default function ContactUsPage() {
     <div className="container mx-auto py-12">
       <h1 className="text-4xl font-bold mb-6">Contact Us</h1>
       <p className="text-lg text-muted-foreground mb-8">
-        We'd love to hear from you! Whether you have a question about our product, need support, or just want to share your thoughts, don't hesitate to reach out.
+        We&apos;d love to hear from you! Whether you have a question about our product, need support, or just want to share your thoughts, don&apos;t hesitate to reach out.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>

@@ -37,7 +37,7 @@ export const GlareCard = ({
     "--radius": "12px", // Slightly curved edges
     "--easing": "ease",
     "--transition": "var(--duration) var(--easing)",
-  } as any;
+  } as never;
 
   const backgroundStyle = {
     "--step": "5%",

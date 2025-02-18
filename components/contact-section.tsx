@@ -38,8 +38,8 @@ export function ContactSection() {
             <CardHeader>
               <CardTitle className="text-4xl font-bold text-center">Contact Us</CardTitle>
               <CardDescription className="text-center text-lg mt-4">
-                We'd love to hear from you! Whether you have a question about our product, need support, or just want to
-                share your thoughts, don't hesitate to reach out.
+                We&apos;d love to hear from you! Whether you have a question about our product, need support, or just want to
+                share your thoughts, don&apos;t hesitate to reach out.
               </CardDescription>
             </CardHeader>
             <CardContent className="mt-8">

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
+import { CardContent } from "@/components/ui/card"
 import { MarqueeDemo } from "./ui/marquee-demo"
 import { GlareCard } from "@/components/ui/glare-card" // Assuming the glare effect is defined here
 

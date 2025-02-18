@@ -13,7 +13,7 @@ export default function OurTeamPage() {
       <h1 className="text-4xl font-bold mb-6">Our Team</h1>
       <p className="text-lg text-muted-foreground mb-8">
         The Reflect team is a diverse group of thinkers, creators, and problem-solvers. 
-        We're united by our passion for building tools that enhance human cognition and creativity.
+        We&apos;re united by our passion for building tools that enhance human cognition and creativity.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {teamMembers.map((member, index) => (
