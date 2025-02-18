@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { PinContainer, PinPerspective } from "./ui/3d-pin"
+// import { PinContainer, PinPerspective } from "./ui/3d-pin"
 
 export function AboutSection() {
   return (
@@ -35,12 +35,12 @@ export function AboutSection() {
           </motion.div>
 
           {/* Right side with 3D Pin Effect */}
-          <PinContainer className="relative flex flex-col items-center">
+          {/* <PinContainer className="relative flex flex-col items-center">
     <PinPerspective className="absolute inset-0 bg-transparent">
     <div className="bg-gradient-to-br from-[#fc6b32]/15 to-purple-900/20 backdrop-blur-xl border border-white/10 p-6 rounded-lg">
     </div>
   </PinPerspective>
-</PinContainer>
+</PinContainer> */}
 
 
         </div>
