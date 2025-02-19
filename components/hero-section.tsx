@@ -16,7 +16,11 @@ export function HeroSection() {
     >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.2),transparent)] z-0" />
-      <BackgroundLines className="absolute inset-0 z-0 opacity-40" />
+      <BackgroundLines className="absolute inset-0 z-0 opacity-40">
+        {/* You can pass any content here if needed */}
+        {/* For example, an empty fragment */}
+        <></>
+      </BackgroundLines>
 
       <div className="relative container mx-auto px-6 text-center z-10">
         <motion.div
