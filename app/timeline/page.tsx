@@ -1,174 +1,97 @@
 import { Timeline } from "@/components/ui/timeline";
 import Image from "next/image";
 import React from "react";
+import { Iceland } from "next/font/google"; // Import Iceland font
+
+const iceland = Iceland({ subsets: ["latin"], weight: "400" }); // Initialize font
 
 const data = [
-    {
-      title: "Feb 1st",
-      content: (
-        <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-md lg:text-lg font-normal mb-8">
-            Start of Registartion for hackathon
-          </p>
-          <div className="grid grid-cols-2 gap-4">
+  {
+    title: (
+      <span className="bg-gradient-to-r from-red-500 to-orange-500 text-transparent bg-clip-text">
+        March 1st
+      </span>
+    ),
+    content: (
+      <div>
+        <p className={`text-neutral-800 dark:text-neutral-200 text-xs md:text-md lg:text-lg ${iceland.className} mb-8`}>
+          Start of Registration for Hackathon
+        </p>
+        <div className="grid grid-cols-2 gap-4">
+          {[...Array(4)].map((_, index) => (
             <Image
+              key={index}
               src="/image.png"
               alt="startup template"
               width={500}
               height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
             />
-            <Image
-              src="/image.png"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <Image
-              src="/image.png"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <Image
-              src="/image.png"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-          </div>
+          ))}
         </div>
-      ),
-    },
-    {
-      title: "Feb 25",
-      content: (
-        <div>
-          <p className="text-neutral-800 dark:text-neutral-200 md:text-md lg:text-lg font-normal mb-8">
-            Last Day for Online PPT Submission
-          </p>
-          <div className="grid grid-cols-2 gap-4">
+      </div>
+    ),
+  },
+  {
+    title: (
+      <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
+        April 4th
+      </span>
+    ),
+    content: (
+      <div>
+        <p className={`text-neutral-800 dark:text-neutral-200 md:text-md lg:text-lg ${iceland.className} mb-8`}>
+          Day 1 of Hackathon at Chandigarh University
+        </p>
+        <div className="grid grid-cols-2 gap-4">
+          {[...Array(4)].map((_, index) => (
             <Image
+              key={index}
               src="/image.png"
-              alt="hero template"
+              alt="presentation template"
               width={500}
               height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
             />
-            <Image
-              src="/image.png"
-              alt="feature template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <Image
-              src="/image.png"
-              alt="bento template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <Image
-              src="/image.png"
-              alt="cards template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-          </div>
+          ))}
         </div>
-      ),
-    },
-    {
-      title: "Feb 27",
-      content: (
-        <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-md lg:text-lg font-normal mb-4">
-              Start on Hackathon in Chandigarh University
-          </p>
-          <div className="grid grid-cols-2 gap-4">
+      </div>
+    ),
+  },
+  {
+    title: (
+      <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+        April 5th
+      </span>
+    ),
+    content: (
+      <div>
+        <p className={`text-neutral-800 dark:text-neutral-200 text-xs md:text-md lg:text-lg ${iceland.className} mb-4`}>
+          Day 2 of Hackathon at Chandigarh University
+        </p>
+        <div className="grid grid-cols-2 gap-4">
+          {[...Array(4)].map((_, index) => (
             <Image
+              key={index}
               src="/image.png"
-              alt="hero template"
+              alt="event template"
               width={500}
               height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg"
             />
-            <Image
-              src="/image.png"
-              alt="feature template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <Image
-              src="/image.png"
-              alt="bento template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <Image
-              src="/image.png"
-              alt="cards template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-          </div>
+          ))}
         </div>
-      ),
-    },
-    {
-      title: "Feb 28",
-      content: (
-        <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-md lg:text-lg font-normal mb-4">
-              Winner Declaration and Prize Distribution
-          </p>
-          <div className="grid grid-cols-2 gap-4">
-            <Image
-              src="/image.png"
-              alt="hero template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <Image
-              src="/image.png"
-              alt="feature template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <Image
-              src="/image.png"
-              alt="bento template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            <Image
-              src="/image.png"
-              alt="cards template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-          </div>
-        </div>
-      ),
-    }
-  ];
+      </div>
+    ),
+  },
+];
 
-export default function Page() {
-    return (
-        <div className="flex justify-center flex-col">
-            <Timeline data={data} />
-        </div>
-    );
-}
+const HackathonTimeline = () => {
+  return (
+    <div className={iceland.className}>
+      <Timeline data={data} />
+    </div>
+  );
+};
+
+export default HackathonTimeline;

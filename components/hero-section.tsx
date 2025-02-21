@@ -26,7 +26,7 @@ export function HeroSection() {
 
       {/* Text Container with Background Image */}
       <div
-        className="relative container mx-auto px-6 text-center z-10 bg-[url('/images/bg-texture.svg')] bg-cover bg-center"
+        className="relative container mx-auto px-6 text-center z-10 bg-[url('/images/bg-texture.png')] bg-cover bg-center"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
