@@ -31,14 +31,20 @@ export function DigitalAvatarSection() {
   }
 
   if (!hydrated) return null
-
+  
   return (
     <section
       id="digital-avatar"
       className="relative flex items-center justify-center min-h-screen w-full bg-background"
+      style={{
+        backgroundImage: "url(/images/digital-avatar-bg.png)",
+        backgroundSize: "95%",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.2),transparent)]" />
-      <div className="container mx-auto px-6 py-12 z-10">
+      <div className="container mx-auto px-6 py-24 z-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +53,7 @@ export function DigitalAvatarSection() {
         >
           Create Your Digital Avatar
         </motion.h2>
-        <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
+        <div className="flex flex-col md:flex-row gap-20 items-center justify-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -61,7 +67,7 @@ export function DigitalAvatarSection() {
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <label htmlFor="teamName" className="text-sm font-medium text-muted-foreground">
+                    <label htmlFor="teamName" className="text-sm text-lg font-medium text-muted-foreground">
                       Team Name
                     </label>
                     <div className="relative">

@@ -5,14 +5,21 @@ import { motion } from "framer-motion"
 
 export function TeamSection() {
   const teamMembers = [
-    { name: "Jane Doe", role: "CEO & Founder", image: "/placeholder.svg?height=200&width=200" },
-    { name: "John Smith", role: "CTO", image: "/placeholder.svg?height=200&width=200" },
-    { name: "Alice Johnson", role: "Lead Designer", image: "/placeholder.svg?height=200&width=200" },
-    { name: "Bob Williams", role: "AI Specialist", image: "/placeholder.svg?height=200&width=200" },
+    { name: "Ashish", role: "Secretary", image: "/images/Ashish.jpg" },
+    { name: "Rishi", role: "Jt. Secretary", image: "/images/Rishi.jpg" },
+    { name: "Krish", role: "Jt. Secretary", image: "/images/Krish.jpg" },
+    { name: "Harshita", role: "Jt. Secretary", image: "/images/Harshita.jpg" },
+    { name: "Ashini", role: "Design Lead", image: "/images/Ashini.jpeg" },
+    { name: "Priyanshu", role: "Technical Lead", image: "/images/Priyanshu.jpg" },
+    { name: "Utkarsh", role: "Event Management Lead", image: "/images/Utkarsh.jpg" },
+    { name: "Sarthak", role: "Marketing Lead", image: "/images/Sarthak.jpg" },
+    { name: "Adith", role: "Content Lead", image: "/images/Adith.jpg" },
+    { name: "Atish", role: "Media Lead", image: "/images/Atish.jpg" },
+    { name: "Harshit", role: "Finance Lead", image: "/images/Harshit.jpg" },
   ]
 
   return (
-    <section id="our-team" className="relative flex items-center justify-center min-h-screen bg-background">
+    <section id="our-team" className="relative flex items-center justify-center min-h-screen bg-background pt-20">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.2),transparent)]" />
       <div className="container mx-auto px-6 z-10">
         <motion.h2
@@ -44,12 +51,13 @@ export function TeamSection() {
               className="flex flex-col items-center"
             >
               <Image
-                src={member.image || "/placeholder.svg"}
-                alt={member.name}
-                width={200}
-                height={200}
-                className="rounded-full mb-4"
-              />
+  src={member.image || "/placeholder.svg"}
+  alt={member.name}
+  width={200}
+  height={200}
+  className="rounded-full mb-4 object-cover aspect-square"
+/>
+
               <h3 className="text-xl font-semibold">{member.name}</h3>
               <p className="text-muted-foreground">{member.role}</p>
             </motion.div>

@@ -7,6 +7,10 @@ import { cn } from "@/lib/utils";
 import { BackgroundLines } from "./ui/background-lines";
 import Image from "next/image";
 import Countdown from "./ui/Countdown";
+import { Iceland } from "next/font/google";
+
+// Import Iceland font
+const iceland = Iceland({ subsets: ["latin"], weight: "400" });
 
 export function HeroSection() {
   return (
@@ -17,7 +21,6 @@ export function HeroSection() {
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.2),transparent)] z-0" />
       <BackgroundLines className="absolute inset-0 z-0 opacity-40">
-        {/* You can pass any content here if needed */}
         <></>
       </BackgroundLines>
 
@@ -28,9 +31,15 @@ export function HeroSection() {
           transition={{ duration: 0.8 }}
         >
           {/* Title */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white">
+          <div className="pt-20">
+            <p className={iceland.className}></p>
+          </div>
+          <h1
+            className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white ${iceland.className}`}
+          >
             What The Hack??
           </h1>
+
           <Image
             src="/images/24-hours.svg"
             alt="24 Hours Icon"
@@ -44,7 +53,7 @@ export function HeroSection() {
             <Link
               href="#"
               className={cn(
-                "inline-flex items-center justify-center rounded-md text-base sm:text-lg font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 h-12 px-8",
+                `inline-flex items-center justify-center rounded-md text-base sm:text-lg font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 h-12 px-8 ${iceland.className}`,
                 HoverBorderGradient
               )}
             >
@@ -53,7 +62,7 @@ export function HeroSection() {
             <Link
               href="#"
               className={cn(
-                "inline-flex items-center justify-center rounded-md text-base sm:text-lg font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 h-12 px-8",
+                `inline-flex items-center justify-center rounded-md text-base sm:text-lg font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 h-12 px-8 ${iceland.className}`,
                 HoverBorderGradient
               )}
             >
@@ -67,13 +76,15 @@ export function HeroSection() {
             <div className="relative w-[320px] h-[320px] flex items-center justify-center">
               {/* Background Image */}
               <Image
-                src="/images/countdown-bg.svg"
+                src="/images/countdown-bg1.svg"
                 alt="Countdown Background"
                 fill
                 className="object-contain"
               />
               {/* Countdown Positioned Absolutely Inside */}
-              <div className="absolute flex items-center justify-center">
+              <div
+                className={`absolute flex items-center justify-center ${iceland.className}`}
+              >
                 <Countdown />
               </div>
             </div>

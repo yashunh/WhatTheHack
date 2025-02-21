@@ -1,12 +1,12 @@
 "use client"
 
-import { Inter } from "next/font/google"
+import { Iceland } from "next/font/google"
 import { SiteHeader } from "@/components/site-header"
 import "@/app/globals.css"
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 
-const inter = Inter({ subsets: ["latin"] })
+const iceland = Iceland({ subsets: ["latin"], weight: "400" })
 
 export default function RootLayout({
   children,
@@ -29,7 +29,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} min-h-screen bg-background text-foreground dark`}>
+      <body className={`${iceland.className} min-h-screen bg-background text-foreground dark`}>
         <SiteHeader />
         {children}
         <motion.div
@@ -52,4 +52,3 @@ export default function RootLayout({
     </html>
   )
 }
-

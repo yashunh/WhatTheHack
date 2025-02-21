@@ -33,37 +33,37 @@ export function SiteHeader() {
         <nav className="flex items-center space-x-4">
           <button
             onClick={() => scrollToSection("home")}
-            className="text-base font-medium text-white hover:bg-gradient-to-r hover:from-[#ea623e] hover:via-[#934d76] hover:to-[#632182] hover:bg-clip-text hover:text-transparent hover:underline"
+            className="text-base text-lg font-medium text-white hover:bg-gradient-to-r hover:from-[#ea623e] hover:via-[#934d76] hover:to-[#632182] hover:bg-clip-text hover:text-transparent hover:underline"
           >
             Home
           </button>
           <button
             onClick={() => scrollToSection("about")}
-            className="text-base font-medium text-white hover:bg-gradient-to-r hover:from-[#ea623e] hover:via-[#934d76] hover:to-[#632182] hover:bg-clip-text hover:text-transparent hover:underline"
+            className="text-base text-lg font-medium text-white hover:bg-gradient-to-r hover:from-[#ea623e] hover:via-[#934d76] hover:to-[#632182] hover:bg-clip-text hover:text-transparent hover:underline"
           >
             About
           </button>
           <button
             onClick={() => scrollToSection("theme")}
-            className="text-base font-medium text-white hover:bg-gradient-to-r hover:from-[#ea623e] hover:via-[#934d76] hover:to-[#632182] hover:bg-clip-text hover:text-transparent hover:underline"
+            className="text-base text-lg font-medium text-white hover:bg-gradient-to-r hover:from-[#ea623e] hover:via-[#934d76] hover:to-[#632182] hover:bg-clip-text hover:text-transparent hover:underline"
           >
             Theme
           </button>
           <button
             onClick={() => scrollToSection("our-team")}
-            className="text-base font-medium text-white hover:bg-gradient-to-r hover:from-[#ea623e] hover:via-[#934d76] hover:to-[#632182] hover:bg-clip-text hover:text-transparent hover:underline"
+            className="text-base text-lg font-medium text-white hover:bg-gradient-to-r hover:from-[#ea623e] hover:via-[#934d76] hover:to-[#632182] hover:bg-clip-text hover:text-transparent hover:underline"
           >
             Our Team
           </button>
           <button
             onClick={() => scrollToSection("faqs")}
-            className="text-base font-medium text-white hover:bg-gradient-to-r hover:from-[#ea623e] hover:via-[#934d76] hover:to-[#632182] hover:bg-clip-text hover:text-transparent hover:underline"
+            className="text-base text-lg font-medium text-white hover:bg-gradient-to-r hover:from-[#ea623e] hover:via-[#934d76] hover:to-[#632182] hover:bg-clip-text hover:text-transparent hover:underline"
           >
             FAQs
           </button>
           <button
             onClick={() => scrollToSection("contact-us")}
-            className="text-base font-medium text-white hover:bg-gradient-to-r hover:from-[#ea623e] hover:via-[#934d76] hover:to-[#632182] hover:bg-clip-text hover:text-transparent hover:underline"
+            className="text-base text-lg font-medium text-white hover:bg-gradient-to-r hover:from-[#ea623e] hover:via-[#934d76] hover:to-[#632182] hover:bg-clip-text hover:text-transparent hover:underline"
           >
             Contact Us
           </button>
