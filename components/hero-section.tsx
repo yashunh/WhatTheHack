@@ -26,10 +26,10 @@ export function HeroSection() {
 
       {/* Text Container with Background Image */}
       <div
-  className="relative container mx-auto px-6 text-center z-10 
+  className="relative container mx-auto px-2 text-center z-10  
   bg-[url('/images/bg-texture.png')] bg-cover bg-top 
   pt-32 pb-20"
-  style={{ top: "50px" }} // Adjust this value to push down
+  style={{ top: "70px" }} // Adjust this value to push down
 >
 
 

@@ -34,18 +34,18 @@ export function ContactSection() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl mx-auto"
         >
-          <Card className="bg-gradient-to-br from-[#fc6b32]/15 to-purple-900/20 backdrop-blur-xl border border-white/10 rounded-lg shadow-lg">
+          <Card className="bg-gradient-to-br from-[#fc6b32]/15 to-purple-900/20 backdrop-blur-xl border border-white/10 rounded-xl shadow-xl">
             <CardHeader>
               <CardTitle className="text-4xl font-bold text-center">Contact Us</CardTitle>
-              <CardDescription className="text-center text-lg mt-4">
-                We&apos;d love to hear from you! Whether you have a question about our product, need support, or just want to
+              <CardDescription className="text-center text-xl mt-4">
+                We&apos;d love to hear from you! Whether you have a question about our hackathon, give us feedback or just want to
                 share your thoughts, don&apos;t hesitate to reach out.
               </CardDescription>
             </CardHeader>
             <CardContent className="mt-8">
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-lg font-medium text-muted-foreground">
+                  <label htmlFor="name" className="text-xl font-medium text-muted-foreground">
                     Name
                   </label>
                   <Input
@@ -55,11 +55,11 @@ export function ContactSection() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="bg-background text-lg py-3"
+                    className="bg-background text-xl py-3"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-lg font-medium text-muted-foreground">
+                  <label htmlFor="email" className="text-xl font-medium text-muted-foreground">
                     Email
                   </label>
                   <Input
@@ -69,11 +69,11 @@ export function ContactSection() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="bg-background text-lg py-3"
+                    className="bg-background text-xl py-3"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-lg font-medium text-muted-foreground">
+                  <label htmlFor="message" className="text-xl font-medium text-muted-foreground">
                     Message
                   </label>
                   <Textarea
@@ -83,12 +83,12 @@ export function ContactSection() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="bg-background text-lg py-3"
+                    className="bg-background text-xl py-3"
                   />
                 </div>
                 <Button 
   type="submit" 
-  className="w-full bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-lg py-6"
+  className="w-full bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-xl py-6"
 >
   Send Message
 </Button>

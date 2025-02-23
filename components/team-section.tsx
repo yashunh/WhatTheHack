@@ -21,44 +21,51 @@ export function TeamSection() {
   return (
     <section id="our-team" className="relative flex items-center justify-center min-h-screen bg-background pt-20">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.2),transparent)]" />
-      <div className="container mx-auto px-6 z-10">
+      <div className="container mx-auto px-6 z-10 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-7xl font-bold mb-8 text-center"
+          className="text-7xl font-bold mb-8"
         >
           Our Team
         </motion.h2>
-        <motion.div
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className=""
+          className="text-lg text-muted-foreground text-white"
         >
-          <p className="text-lg text-muted-foreground  text-white text-center">
           This event is organized by the dedicated members of the Sci-Fi Innovation Club. We extend our heartfelt gratitude to all the core members for their unwavering hard work and invaluable contributions.
-          </p>
-        </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        </motion.p>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex flex-col items-center"
+              className="group relative flex flex-col items-center bg-white/10 backdrop-blur-lg p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
             >
-              <Image
-  src={member.image || "/placeholder.svg"}
-  alt={member.name}
-  width={200}
-  height={200}
-  className="rounded-full mb-4 object-cover aspect-square"
-/>
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-[#632182] via-[#ea623e] to-[#934d76] z-0" />
 
-              <h3 className="text-xl font-semibold">{member.name}</h3>
-              <p className="text-muted-foreground">{member.role}</p>
+              {/* Content Layer */}
+              <div className="relative z-10 flex flex-col items-center">
+                <Image
+                  src={member.image || "/placeholder.svg"}
+                  alt={member.name}
+                  width={200}
+                  height={200}
+                  className="rounded-full mb-4 object-cover aspect-square border-4 border-transparent group-hover:border-white transition-all"
+                  priority
+                  placeholder="blur"
+                  blurDataURL="/placeholder.svg"
+                />
+                <h3 className="text-xl font-semibold text-white">{member.name}</h3>
+                <p className="text-muted-foreground text-white">{member.role}</p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -66,4 +73,3 @@ export function TeamSection() {
     </section>
   )
 }
-
