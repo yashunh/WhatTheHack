@@ -1,22 +1,31 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 import { CardContent } from "@/components/ui/card"
 import { GlareCard } from "@/components/ui/glare-card" // Assuming the glare effect is defined here
 
-export function ThemeSection() {
-  const themes = [
-    { name: "Blockchain & Crypto", description: "Explore the world of decentralized finance and digital currencies." },
-    { name: "Data & Gen-AI", description: "Harness the power of data and artificial intelligence for innovative solutions." },
-    { name: "CTF & Cyber Security", description: "Engage in capture the flag challenges and enhance your cybersecurity skills." },
-    { name: "Internet of Things (IoT)", description: "Connect and manage devices in a smart ecosystem." },
-    { name: "AR / VR", description: "Dive into augmented and virtual reality experiences." },
-    { name: "Cloud & DevOps", description: "Utilize cloud technologies and DevOps practices for efficient development." },
-    { name: "Web & Mobile Development", description: "Build responsive web and mobile applications." },
-    { name: "Open Innovation", description: "Collaborate and innovate through open-source projects." },
-    { name: "Geo AI", description: "Apply artificial intelligence to geographic data for insightful analysis." }
-  ]
+type Theme = {
+  name: string;
+  description: string;
+  image: string;
+};
 
+const themes: Theme[] = [
+  { name: "Blockchain & Crypto", description: "Explore the world of decentralized finance and digital currencies.", image: "/images/blockchain.svg" },
+  { name: "Data & Gen-AI", description: "Harness the power of data and artificial intelligence for innovative solutions.", image: "/images/data-ai.svg" },
+  { name: "CTF & Cyber Security", description: "Engage in capture the flag challenges and enhance your cybersecurity skills.", image: "/images/cybersecurity.svg" },
+  { name: "Internet of Things (IoT)", description: "Connect and manage devices in a smart ecosystem.", image: "/images/iot.svg" },
+  { name: "AR / VR", description: "Dive into augmented and virtual reality experiences.", image: "/images/ar-vr.svg" },
+  { name: "Cloud & DevOps", description: "Utilize cloud technologies and DevOps practices for efficient development.", image: "/images/cloud-devops.svg" },
+  { name: "Web & Mobile Development", description: "Build responsive web and mobile applications.", image: "/images/web-mobile.svg" },
+  { name: "Open Innovation", description: "Collaborate and innovate through open-source projects.", image: "/images/open-innovation.svg" },
+  { name: "Geo AI", description: "Apply artificial intelligence to geographic data for insightful analysis.", image: "/images/geo-ai.svg" }
+];
+
+console.log(themes); // Debugging to ensure images are being passed correctly
+
+export function ThemeSection() {
   return (
     <>
       <section id="theme" className="relative flex items-center justify-center min-h-screen w-full bg-background px-6">
@@ -51,8 +60,15 @@ export function ThemeSection() {
                 className="w-full"
               >
                 <GlareCard className="h-full hover:from-gray-900/60 hover:to-purple-900/40 transition-all duration-300">
-                  <CardContent className="p-6 h-full flex flex-col justify-center items-center text-center">
-                    <h3 className="text-lg font-semibold mb-2">{theme.name}</h3>
+                  <CardContent className="p-6 h-full flex flex-col justify-center items-center text-center space-y-4">
+                    <Image 
+                      src={theme.image} 
+                      alt={theme.name} 
+                      width={100} 
+                      height={100} 
+                      className="w-24 h-24 object-contain"
+                    />
+                    <h3 className="text-lg font-semibold">{theme.name}</h3>
                     <p className="text-sm text-muted-foreground">{theme.description}</p>
                   </CardContent>
                 </GlareCard>
@@ -61,10 +77,6 @@ export function ThemeSection() {
           </div>
         </div>
       </section>
-
-      {/* <section> <MarqueeDemo /></section> */}
-      {/* Marquee Component */}
-      
     </>
   )
 }

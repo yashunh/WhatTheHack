@@ -41,7 +41,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li className="text-md text-muted-foreground">Email: support@reflect.app</li>
               <li className="text-md text-muted-foreground">Phone: +1 (555) 123-4567</li>
-              <li className="text-md text-muted-foreground">123 AI Street, Tech City, TC 12345</li>
+              <li className="text-md text-muted-foreground">Chandigarh University, Mohali, Punjab 140413</li>
             </ul>
           </div>
           <div className="space-y-4">

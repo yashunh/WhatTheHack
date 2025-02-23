@@ -146,66 +146,62 @@ export function ClaimBadgeSection() {
 
           {/* Badge Card - No Changes in Font Size */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="w-full md:w-1/2 max-w-md"
-          >
-            {showBadge && (
-              <>
-                <Card
-  id="badge"
-  className="relative bg-gradient-to-br from-yellow-400 to-orange-500 text-white shadow-lg border-4 border-yellow-700 overflow-hidden"
+  initial={{ opacity: 0, x: 20 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8 }}
+  className="w-full md:w-1/2 max-w-md"
 >
-  {/* Star-Shaped Sparkles */}
-  <div className="absolute inset-0 pointer-events-none">
-    <div className="absolute text-yellow-200 opacity-80 animate-pulse top-4 left-6">
-      ✨
+  <Card
+    className="relative bg-gradient-to-br from-yellow-400 to-orange-500 text-white shadow-lg border-4 border-yellow-700 overflow-hidden"
+  >
+    {/* Star-Shaped Sparkles */}
+    <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute text-yellow-200 opacity-80 animate-pulse top-4 left-6">✨</div>
+      <div className="absolute text-yellow-300 opacity-80 animate-ping top-10 right-10">✨</div>
+      <div className="absolute text-yellow-100 opacity-80 animate-bounce bottom-6 left-10">✨</div>
+      <div className="absolute text-yellow-400 opacity-80 animate-pulse bottom-12 right-5">✨</div>
+      <div className="absolute text-yellow-300 opacity-80 animate-bounce top-16 left-20">✨</div>
+      <div className="absolute text-yellow-200 opacity-80 animate-pulse bottom-8 right-16">✨</div>
     </div>
-    <div className="absolute text-yellow-300 opacity-80 animate-ping top-10 right-10">
-      ✨
-    </div>
-    <div className="absolute text-yellow-100 opacity-80 animate-bounce bottom-6 left-10">
-      ✨
-    </div>
-    <div className="absolute text-yellow-400 opacity-80 animate-pulse bottom-12 right-5">
-      ✨
-    </div>
-    <div className="absolute text-yellow-300 opacity-80 animate-bounce top-16 left-20">
-      ✨
-    </div>
-    <div className="absolute text-yellow-200 opacity-80 animate-pulse bottom-8 right-16">
-      ✨
-    </div>
-  </div>
 
-  <CardContent className="flex flex-col items-center space-y-4 p-6 relative z-10">
-    <Image
-      src="/images/badge1.png"
-      alt="Event Logo"
-      width={200}
-      height={200}
-      className="rounded-full mb-4"
-    />
-    <h3 className="text-2xl font-bold text-center">What The Hack 2025</h3>
-    <div className="text-center">
-      <p className="text-xl font-semibold">{participantInfo.participantName}</p>
-      <p className="text-lg">{participantInfo.teamName}</p>
-    </div>
-    <p className="text-center font-medium">4th & 5th April 2025</p>
-    <div className="bg-yellow-200 rounded-full px-4 py-2 text-yellow-800 font-bold">
-      Official Participant
-    </div>
-    <p className="text-center text-sm">Awarded for successfully contributing to the event.</p>
-  </CardContent>
-</Card>
+    {showBadge ? (
+      <CardContent className="flex flex-col items-center space-y-4 p-6 relative z-10">
+        <Image
+          src="/images/badge1.png"
+          alt="Event Logo"
+          width={200}
+          height={200}
+          className="rounded-full mb-4"
+        />
+        <h3 className="text-2xl font-bold text-center">What The Hack 2025</h3>
+        <div className="text-center">
+          <p className="text-xl font-semibold">{participantInfo.participantName}</p>
+          <p className="text-lg">{participantInfo.teamName}</p>
+        </div>
+        <p className="text-center font-medium">4th & 5th April 2025</p>
+        <div className="bg-yellow-200 rounded-full px-4 py-2 text-yellow-800 font-bold">
+          Official Participant
+        </div>
+        <p className="text-center text-sm">Awarded for successfully contributing to the event.</p>
+      </CardContent>
+    ) : (
+      <div className="flex flex-col text-xl items-center justify-center h-80">
+        <span className="text-6xl font-bold">❓</span>
+        <p>Your badge appears here</p>
+      </div>
+    )}
+  </Card>
 
-                <Button onClick={handleDownload} className="mt-4 text-lg w-full bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800">
-                  Download Badge
-                </Button>
-              </>
-            )}
-          </motion.div>
+  {showBadge && (
+    <Button
+      onClick={handleDownload}
+      className="mt-4 text-lg w-full bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800"
+    >
+      Download Badge
+    </Button>
+  )}
+</motion.div>
+
         </div>
       </div>
     </section>

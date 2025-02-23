@@ -1,23 +1,33 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 export function SiteHeader() {
   const router = useRouter();
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navLinks = [
+    { name: "Home", id: "home" },
+    { name: "About", id: "about" },
+    { name: "Theme", id: "theme" },
+    { name: "Our Team", id: "our-team" },
+    { name: "FAQs", id: "faqs" },
+    { name: "Contact Us", id: "contact-us" },
+  ];
 
   const scrollToSection = (sectionId: string) => {
+    setIsMenuOpen(false); // Close menu on click
     if (pathname === "/") {
-      // Scroll to section if on the home page
-      const section = document.getElementById(sectionId);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
+      setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
     } else {
-      // Redirect to home and scroll after navigation
       router.push(`/#${sectionId}`);
     }
   };
@@ -29,9 +39,9 @@ export function SiteHeader() {
       transition={{ duration: 0.8 }}
       className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#ea623e]/10 via-[#934d76]/10 to-[#632182]/10 backdrop-blur-sm border-b border-border/40"
     >
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-3 ml-6">
+        <Link href="/" className="flex items-center space-x-3">
           <Image
             src="/images/wth-logo.svg"
             alt="Wth Logo"
@@ -41,44 +51,25 @@ export function SiteHeader() {
           />
         </Link>
 
-        {/* Navigation */}
-        <nav className="flex items-center space-x-4">
-          <button
-            onClick={() => scrollToSection("home")}
-            className="text-lg font-medium text-white hover:bg-gradient-to-r hover:from-[#ea623e] hover:via-[#934d76] hover:to-[#632182] hover:bg-clip-text hover:text-transparent hover:underline"
-          >
-            Home
-          </button>
-          <button
-            onClick={() => scrollToSection("about")}
-            className="text-lg font-medium text-white hover:bg-gradient-to-r hover:from-[#ea623e] hover:via-[#934d76] hover:to-[#632182] hover:bg-clip-text hover:text-transparent hover:underline"
-          >
-            About
-          </button>
-          <button
-            onClick={() => scrollToSection("theme")}
-            className="text-lg font-medium text-white hover:bg-gradient-to-r hover:from-[#ea623e] hover:via-[#934d76] hover:to-[#632182] hover:bg-clip-text hover:text-transparent hover:underline"
-          >
-            Theme
-          </button>
-          <button
-            onClick={() => scrollToSection("our-team")}
-            className="text-lg font-medium text-white hover:bg-gradient-to-r hover:from-[#ea623e] hover:via-[#934d76] hover:to-[#632182] hover:bg-clip-text hover:text-transparent hover:underline"
-          >
-            Our Team
-          </button>
-          <button
-            onClick={() => scrollToSection("faqs")}
-            className="text-lg font-medium text-white hover:bg-gradient-to-r hover:from-[#ea623e] hover:via-[#934d76] hover:to-[#632182] hover:bg-clip-text hover:text-transparent hover:underline"
-          >
-            FAQs
-          </button>
-          <button
-            onClick={() => scrollToSection("contact-us")}
-            className="text-lg font-medium text-white hover:bg-gradient-to-r hover:from-[#ea623e] hover:via-[#934d76] hover:to-[#632182] hover:bg-clip-text hover:text-transparent hover:underline"
-          >
-            Contact Us
-          </button>
+        {/* Mobile Menu Toggle */}
+        <button
+          className="md:hidden text-white"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-6">
+          {navLinks.map((link) => (
+            <button
+              key={link.id}
+              onClick={() => scrollToSection(link.id)}
+              className="text-lg font-medium text-white hover:bg-gradient-to-r hover:from-[#ea623e] hover:via-[#934d76] hover:to-[#632182] hover:bg-clip-text hover:text-transparent hover:underline"
+            >
+              {link.name}
+            </button>
+          ))}
 
           {/* Timeline Button */}
           <Link
@@ -89,6 +80,38 @@ export function SiteHeader() {
           </Link>
         </nav>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="md:hidden absolute top-16 left-0 w-full bg-[#121212]/90 backdrop-blur-lg border-t border-border/40"
+          >
+            <nav className="flex flex-col items-center space-y-4 py-6">
+              {navLinks.map((link) => (
+                <button
+                  key={link.id}
+                  onClick={() => scrollToSection(link.id)}
+                  className="text-lg font-medium text-white hover:bg-gradient-to-r hover:from-[#ea623e] hover:via-[#934d76] hover:to-[#632182] hover:bg-clip-text hover:text-transparent hover:underline"
+                >
+                  {link.name}
+                </button>
+              ))}
+
+              {/* Timeline Button */}
+              <Link
+                href="/timeline"
+                className="inline-flex items-center justify-center rounded-md text-lg font-semibold transition-colors bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 h-10 px-6"
+              >
+                Timeline
+              </Link>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }

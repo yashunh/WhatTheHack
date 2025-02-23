@@ -57,7 +57,7 @@ export function HeroSection() {
           />
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row justify-center gap-5 mt-6">
+          <div className="flex flex-wrap justify-center gap-3 mt-6 w-full sm:w-auto">
             <Link
               href="#"
               className={cn(
