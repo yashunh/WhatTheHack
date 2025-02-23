@@ -1,7 +1,8 @@
 "use client"
 
 import { HeroSection } from "@/components/hero-section"
-import { DigitalAvatarSection } from "@/components/digital-avatar-section"
+// import { DigitalAvatarSection } from "@/components/digital-avatar-section"
+import { ClaimBadgeSection } from "@/components/claim-badge-section"
 import { AboutSection } from "@/components/about-section"
 import { ThemeSection } from "@/components/theme-section"
 import { TeamSection } from "@/components/team-section"
@@ -13,7 +14,8 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between relative">
       <HeroSection />
-      <DigitalAvatarSection />
+      <ClaimBadgeSection />
+      {/* <DigitalAvatarSection /> */}
       <AboutSection />
       <ThemeSection />
       <TeamSection />

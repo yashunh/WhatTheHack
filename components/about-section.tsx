@@ -13,9 +13,9 @@ export function AboutSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl font-bold mb-12 text-center text-white"
+          className="text-7xl font-bold mb-12 text-center text-white"
         >
-          About Open Challenge Hackathon
+          About What The Hack
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12"> {/* Added gap */}
@@ -30,7 +30,7 @@ export function AboutSection() {
             <div className="text-center px-8">
               <h3 className="text-xl font-semibold mb-4">Our Mission</h3>
               <p className="text-white">
-                The Open Challenge Hackathon, organized by the Sci-Fi Innovation Club, is a platform for passionate individuals, tech enthusiasts, and innovators to solve real-world problems creatively.
+                The What The Hack, organized by the Sci-Fi Innovation Club, is a platform for passionate individuals, tech enthusiasts, and innovators to solve real-world problems creatively.
               </p>
             </div>
           </motion.div>

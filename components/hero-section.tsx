@@ -43,7 +43,7 @@ export function HeroSection() {
             <p className={iceland.className}></p>
           </div>
           <h1
-            className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white ${iceland.className}`}
+            className={`text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold tracking-tight text-white ${iceland.className}`}
           >
             What The Hack??
           </h1>
@@ -65,7 +65,7 @@ export function HeroSection() {
                 HoverBorderGradient
               )}
             >
-              Explore Themes
+              Register Here
             </Link>
             <Link
               href="#"

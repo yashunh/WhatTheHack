@@ -26,7 +26,7 @@ export function TeamSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl font-bold mb-8 text-center"
+          className="text-7xl font-bold mb-8 text-center"
         >
           Our Team
         </motion.h2>
@@ -36,9 +36,8 @@ export function TeamSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className=""
         >
-          <p className="text-lg text-muted-foreground text-center">
-            The Reflect team is a diverse group of thinkers, creators, and problem-solvers. We&apos;re united by our passion
-            for building tools that enhance human cognition and creativity.
+          <p className="text-lg text-muted-foreground  text-white text-center">
+          This event is organized by the dedicated members of the Sci-Fi Innovation Club. We extend our heartfelt gratitude to all the core members for their unwavering hard work and invaluable contributions.
           </p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
