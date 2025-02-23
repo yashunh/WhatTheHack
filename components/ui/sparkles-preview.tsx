@@ -15,15 +15,14 @@ export function SparklesPreview() {
         <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
         <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
 
-        {/* Core component - Triangle Shape Particles */}
+        {/* Sparkles Effect */}
         <SparklesCore
           background="transparent"
           minSize={0.5}
           maxSize={1.2}
-          particleDensity={800} /* Adjusted for triangular effect */
+          particleDensity={800}
           className="w-full h-full"
           particleColor="#FFFFFF"
-          shape="triangle" /* Assuming SparklesCore supports shape property */
         />
 
         {/* Radial Gradient to prevent sharp edges */}
