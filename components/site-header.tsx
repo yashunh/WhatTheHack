@@ -39,7 +39,7 @@ export function SiteHeader() {
       transition={{ duration: 0.8 }}
       className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#ea623e]/10 via-[#934d76]/10 to-[#632182]/10 backdrop-blur-sm border-b border-border/40"
     >
-      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+      <div className="container flex h-16 items-center px-4 md:px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3">
           <Image
@@ -51,16 +51,16 @@ export function SiteHeader() {
           />
         </Link>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Menu Toggle (Only for Mobile) */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-white ml-auto"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <div className="hidden md:flex flex-grow justify-end items-center space-x-6">
           {navLinks.map((link) => (
             <button
               key={link.id}
@@ -71,14 +71,16 @@ export function SiteHeader() {
             </button>
           ))}
 
-          {/* Timeline Button */}
-          <Link
-            href="/timeline"
-            className="inline-flex items-center justify-center rounded-md sm:text-lg font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 h-9 px-5"
-          >
-            Timeline
-          </Link>
-        </nav>
+          {/* Timeline Button - Extreme Right */}
+          <div className="ml-auto">
+            <Link
+              href="/timeline"
+              className="inline-flex items-center justify-center rounded-md sm:text-lg font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 h-9 px-5"
+            >
+              Timeline
+            </Link>
+          </div>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -101,7 +103,7 @@ export function SiteHeader() {
                 </button>
               ))}
 
-              {/* Timeline Button */}
+              {/* Timeline Button - In Mobile Menu */}
               <Link
                 href="/timeline"
                 className="inline-flex items-center justify-center rounded-md text-lg font-semibold transition-colors bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 h-10 px-6"

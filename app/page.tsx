@@ -1,8 +1,8 @@
 "use client"
 
 import { HeroSection } from "@/components/hero-section"
-// import { DigitalAvatarSection } from "@/components/digital-avatar-section"
 import { ClaimBadgeSection } from "@/components/claim-badge-section"
+import { SponsorsSection } from "@/components/sponsors"
 import { AboutSection } from "@/components/about-section"
 import { ThemeSection } from "@/components/theme-section"
 import { TeamSection } from "@/components/team-section"
@@ -18,6 +18,7 @@ export default function Home() {
       {/* <DigitalAvatarSection /> */}
       <AboutSection />
       <ThemeSection />
+      <SponsorsSection />
       <TeamSection />
       <FAQsSection />
       <ContactSection />

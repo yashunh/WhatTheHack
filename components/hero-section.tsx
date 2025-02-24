@@ -12,6 +12,7 @@ import { Iceland } from "next/font/google";
 // Import Iceland font
 const iceland = Iceland({ subsets: ["latin"], weight: "400" });
 
+
 export function HeroSection() {
   return (
     <section
