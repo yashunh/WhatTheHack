@@ -42,7 +42,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 </h1>
 
         </div>
-        <p className="text-neutral-700 dark:text-neutral-300 text-xl xl:text-xl text-center">
+        <p className="text-neutral-700 dark:text-neutral-300 text-3xl xl:text-xl text-center">
           Day-to-day timeline for What The Hack presented by Sci-Fi Innovation Club
         </p>
       </div>
