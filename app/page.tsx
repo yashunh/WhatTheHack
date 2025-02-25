@@ -3,6 +3,8 @@
 import { HeroSection } from "@/components/hero-section"
 import { ClaimBadgeSection } from "@/components/claim-badge-section"
 import { SponsorsSection } from "@/components/sponsors"
+import { CollaborationsSection } from "@/components/collaborations-section"
+import { PrizePoolSection } from "@/components/prize-pool-section"
 import { AboutSection } from "@/components/about-section"
 import { ThemeSection } from "@/components/theme-section"
 import { TeamSection } from "@/components/team-section"
@@ -19,6 +21,9 @@ export default function Home() {
       <AboutSection />
       <ThemeSection />
       <SponsorsSection />
+      <CollaborationsSection />
+      <PrizePoolSection />
+
       <TeamSection />
       <FAQsSection />
       <ContactSection />
