@@ -8,6 +8,7 @@ import { BackgroundLines } from "./ui/background-lines";
 import Image from "next/image";
 import Countdown from "./ui/Countdown";
 import { Iceland } from "next/font/google";
+import { DevfolioButton } from "./ui/devfolio-button";
 
 // Import Iceland font
 const iceland = Iceland({ subsets: ["latin"], weight: "400" });
@@ -82,6 +83,10 @@ export function HeroSection() {
             >
               Join Community
             </Link>
+          </div>
+
+          <div>
+            <DevfolioButton/>
           </div>
 
           {/* Countdown Timer - Fixed Separation Issue */}
