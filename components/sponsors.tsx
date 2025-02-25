@@ -3,9 +3,9 @@
 import Image from "next/image"
 
 const sponsors = [
-  { name: "Devfolio", logo: "/images/devfolio-logo.png" },
-  { name: "ETHIndia", logo: "/images/ethindia-logo.png" },
-  { name: "Polygon", logo: "/images/polygon-logo.png" },
+  { name: "Devfolio", logo: "/images/devfolio-logo.png", alt: "DEVFOLIO LOGO" },
+  { name: "ETHIndia", logo: "/images/ethindia-logo.png", alt: "ETHINDIA LOGO" },
+  { name: "Polygon", logo: "/images/polygon-logo.png", alt: "POLYGON LOGO" },
 ]
 
 export function SponsorsSection() {
@@ -20,7 +20,7 @@ export function SponsorsSection() {
             <Image
               key={index}
               src={sponsor.logo}
-              alt={sponsor.name}
+              alt={sponsor.alt} // Explicitly setting ALT tags
               width={200}
               height={80}
               className="h-20 w-auto object-contain"

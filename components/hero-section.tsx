@@ -12,7 +12,6 @@ import { Iceland } from "next/font/google";
 // Import Iceland font
 const iceland = Iceland({ subsets: ["latin"], weight: "400" });
 
-
 export function HeroSection() {
   return (
     <section
@@ -27,22 +26,28 @@ export function HeroSection() {
 
       {/* Text Container with Background Image */}
       <div
-  className="relative container mx-auto px-2 text-center z-10  
-  bg-[url('/images/bg-texture.png')] bg-cover bg-top 
-  pt-32 pb-20"
-  style={{ top: "70px" }} // Adjust this value to push down
->
-
-
+        className="relative container mx-auto px-2 text-center z-10  
+        bg-[url('/images/bg-texture.png')] bg-cover bg-top 
+        pt-32 pb-20"
+        style={{ top: "70px" }} // Adjust this value to push down
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Title */}
-          <div className="pt-20">
-            <p className={iceland.className}></p>
+          {/* Image above the title */}
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/images/sci-fi.png" // Replace with your actual image path
+              alt="Event Logo"
+              width={350} // Adjust width as needed
+              height={350} // Adjust height as needed
+              className="object-contain"
+            />
           </div>
+
+          {/* Title */}
           <h1
             className={`text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold tracking-tight text-white ${iceland.className}`}
           >

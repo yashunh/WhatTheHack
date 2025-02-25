@@ -18,7 +18,7 @@ const themes: Theme[] = [
   { name: "Internet of Things (IoT)", description: "Connect and manage devices in a smart ecosystem.", image: "/images/iot.svg" },
   { name: "AR / VR", description: "Dive into augmented and virtual reality experiences.", image: "/images/ar-vr.svg" },
   { name: "Cloud & DevOps", description: "Utilize cloud technologies and DevOps practices for efficient development.", image: "/images/cloud-devops.svg" },
-  { name: "Web & Mobile Development", description: "Build responsive web and mobile applications.", image: "/images/web-mobile.svg" },
+  { name: "Web & Mobile Dev", description: "Build responsive web and mobile applications.", image: "/images/web-mobile.svg" },
   { name: "Open Innovation", description: "Collaborate and innovate through open-source projects.", image: "/images/open-innovation.svg" },
   { name: "Geo AI", description: "Apply artificial intelligence to geographic data for insightful analysis.", image: "/images/geo-ai.svg" }
 ];
@@ -61,15 +61,17 @@ export function ThemeSection() {
               >
                 <GlareCard className="h-full hover:from-gray-900/60 hover:to-purple-900/40 transition-all duration-300">
                   <CardContent className="p-6 h-full flex flex-col justify-center items-center text-center space-y-4">
-                    <Image 
-                      src={theme.image} 
-                      alt={theme.name} 
-                      width={100} 
-                      height={100} 
-                      className="w-24 h-24 object-contain"
-                    />
-                    <h3 className="text-lg font-semibold">{theme.name}</h3>
-                    <p className="text-sm text-muted-foreground">{theme.description}</p>
+                    
+                  <Image 
+  src={theme.image} 
+  alt={theme.name} 
+  width={200}  // Increased width
+  height={200} // Increased height
+  className="w-48 h-48 object-contain" // Increased size using Tailwind
+/>
+
+                    <h3 className="text-2xl font-semibold">{theme.name}</h3>
+                    {/* <p className="text-md text-muted-foreground">{theme.description}</p> */}
                   </CardContent>
                 </GlareCard>
               </motion.div>
