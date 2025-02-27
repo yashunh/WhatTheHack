@@ -5,6 +5,7 @@ import Image from "next/image"
 const collaborators = [
   { name: "Cypher Lock Club", logo: "/images/cypher-lock-logo.png" },
   { name: "C Square Club", logo: "/images/csquare-logo.png" },
+  { name: "CU Engineering Community", logo: "/images/cuec.png" },
 ]
 
 export function CollaborationsSection() {

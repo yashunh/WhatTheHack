@@ -20,7 +20,7 @@ export function SponsorsSection() {
             <Image
               key={index}
               src={sponsor.logo}
-              alt={sponsor.alt} // Explicitly setting ALT tags
+              alt={sponsor.alt} 
               width={200}
               height={80}
               className="h-20 w-auto object-contain"
