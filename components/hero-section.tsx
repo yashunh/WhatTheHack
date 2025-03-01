@@ -74,14 +74,18 @@ export function HeroSection() {
               Register Here
             </Link>
             <Link
-              href="#"
-              className={cn(
-                `inline-flex items-center justify-center rounded-md text-base sm:text-lg font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 h-12 px-8 ${iceland.className}`,
-                HoverBorderGradient
-              )}
-            >
-              Join Community
-            </Link>
+  href="https://chat.whatsapp.com/DNTw4OEGO280XF0bDpvraH"
+  passHref
+  target="_blank"
+  rel="noopener noreferrer"
+  className={cn(
+    `inline-flex items-center justify-center rounded-md text-base sm:text-lg font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 h-12 px-8 ${iceland.className}`,
+    HoverBorderGradient
+  )}
+>
+  Join Community
+</Link>
+
           </div>
 
           {/* Countdown Timer - Fixed Separation Issue */}

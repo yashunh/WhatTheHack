@@ -20,7 +20,7 @@ const data = [
             </CardHeader>
             <CardContent>
               <div className="bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-white text-xl md:text-md text-center px-4 py-2 rounded-xl">
-                March 1st 2025
+                March 4th 2025
               </div>
             </CardContent>
           </Card>
