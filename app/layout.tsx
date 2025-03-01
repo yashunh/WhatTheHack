@@ -2,6 +2,7 @@
 
 import { Iceland } from "next/font/google"
 import { SiteHeader } from "@/components/site-header"
+import { AuthProvider } from "@/context/auth"
 import "@/app/globals.css"
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
@@ -30,8 +31,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${iceland.className} min-h-screen bg-background text-foreground dark`}>
-        <SiteHeader />
-        {children}
+        <AuthProvider>
+          <SiteHeader />
+          {children}
+        </AuthProvider>
         <motion.div
           className="fixed top-0 left-0 w-64 h-64 bg-[#fc6b32] rounded-full mix-blend-screen filter blur-[60px] opacity-50 pointer-events-none"
           animate={{
