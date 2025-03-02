@@ -26,7 +26,7 @@ export function PrizePoolSection() {
                   <CardTitle className="text-xl sm:text-2xl font-bold text-center">{title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-4xl sm:text-5xl font-bold text-center">XXXXXX</p>
+                  <p className="text-4xl sm:text-5xl font-bold text-center">XXXXX</p>
                   <p className="text-center mt-2 sm:mt-4">
                     {index === 0 ? "For the winning team" : index === 1 ? "For the 1st runner-up" : "For the 2nd runner-up"}
                   </p>
