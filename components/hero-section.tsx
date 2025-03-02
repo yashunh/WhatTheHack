@@ -29,7 +29,7 @@ export function HeroSection() {
       >
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           {/* Image above the title */}
-          <div className="flex justify-center mb-4">
+          <div className="flex justify-center mb-6">
             <Image
               src="/images/sci-fi.png" // Replace with your actual image path
               alt="Event Logo"
@@ -49,9 +49,9 @@ export function HeroSection() {
           <Image src="/images/24-hours.svg" alt="24 Hours Icon" width={400} height={400} className="mx-auto" />
 
           {/* WhatsApp Join Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6 mb-1">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6 mb-8">
             <a
-              href="https://devfolio.co/"
+              href="https://chat.whatsapp.com/DNTw4OEGO280XF0bDpvraH"
               target="_blank"
               rel="noopener noreferrer"
               className={`${iceland.className} bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 h-12 px-8 text-xl rounded-md transition-all duration-300 border border-black-400] hover:shadow-[0_0_20px_rgba(252,107,50,0.7)] flex items-center justify-center`}
