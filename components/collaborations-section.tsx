@@ -3,7 +3,7 @@
 import Image from "next/image"
 
 const collaborators = [
-  { name: "Cypher Lock Club", logo: "/images/cypher-lock-logo.png" },
+  { name: "Cypher Lock Club", logo: "/images/cypher-lock-logo.svg" },
   { name: "C Square Club", logo: "/images/csquare-logo.png" },
   { name: "CU Engineering Community", logo: "/images/cuec.png" },
 ]
