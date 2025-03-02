@@ -25,11 +25,11 @@ export function HeroSection() {
         className="relative container mx-auto px-2 text-center z-10  
         bg-[url('/images/bg-texture.png')] bg-cover bg-top 
         pt-32 pb-20"
-        style={{ top: "70px" }} // Adjust this value to push down
+        style={{ top: "55px" }} // Adjust this value to push down
       >
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           {/* Image above the title */}
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center mb-1">
             <Image
               src="/images/sci-fi.png" // Replace with your actual image path
               alt="Event Logo"
@@ -54,7 +54,7 @@ export function HeroSection() {
               href="https://chat.whatsapp.com/DNTw4OEGO280XF0bDpvraH"
               target="_blank"
               rel="noopener noreferrer"
-              className={`${iceland.className} bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 h-12 px-8 text-xl rounded-md transition-all duration-300 border border-black-400] hover:shadow-[0_0_20px_rgba(252,107,50,0.7)] flex items-center justify-center`}
+              className={`${iceland.className} bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 h-12 px-8 text-xl rounded-md transition-all duration-300 border border-black-400]] flex items-center justify-center`}
             >
               Register Here
             </a>
