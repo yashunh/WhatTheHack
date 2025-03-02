@@ -1,16 +1,12 @@
-"use client";
-
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
-import { cn } from "@/lib/utils";
-import { BackgroundLines } from "./ui/background-lines";
-import Image from "next/image";
-import Countdown from "./ui/Countdown";
-import { Iceland } from "next/font/google";
+"use client"
+import { motion } from "framer-motion"
+import { BackgroundLines } from "./ui/background-lines"
+import Image from "next/image"
+import Countdown from "./ui/Countdown"
+import { Iceland } from "next/font/google"
 
 // Import Iceland font
-const iceland = Iceland({ subsets: ["latin"], weight: "400" });
+const iceland = Iceland({ subsets: ["latin"], weight: "400" })
 
 export function HeroSection() {
   return (
@@ -31,13 +27,9 @@ export function HeroSection() {
         pt-32 pb-20"
         style={{ top: "70px" }} // Adjust this value to push down
       >
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           {/* Image above the title */}
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center mb-4">
             <Image
               src="/images/sci-fi.png" // Replace with your actual image path
               alt="Event Logo"
@@ -54,57 +46,38 @@ export function HeroSection() {
             What The Hack??
           </h1>
 
-          <Image
-            src="/images/24-hours.svg"
-            alt="24 Hours Icon"
-            width={400}
-            height={400}
-            className="mx-auto"
-          />
+          <Image src="/images/24-hours.svg" alt="24 Hours Icon" width={400} height={400} className="mx-auto" />
 
-          {/* Buttons */}
-          <div className="flex flex-wrap justify-center gap-3 mt-6 w-full sm:w-auto">
-            <Link
-              href="#"
-              className={cn(
-                `inline-flex items-center justify-center rounded-md text-base sm:text-lg font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 h-12 px-8 ${iceland.className}`,
-                HoverBorderGradient
-              )}
+          {/* WhatsApp Join Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6 mb-1">
+            <a
+              href="https://devfolio.co/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${iceland.className} bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 h-12 px-8 text-xl rounded-md transition-all duration-300 border border-black-400] hover:shadow-[0_0_20px_rgba(252,107,50,0.7)] flex items-center justify-center`}
             >
               Register Here
-            </Link>
-            <Link
-  href="https://chat.whatsapp.com/DNTw4OEGO280XF0bDpvraH"
-  passHref
-  target="_blank"
-  rel="noopener noreferrer"
-  className={cn(
-    `inline-flex items-center justify-center rounded-md text-base sm:text-lg font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 h-12 px-8 ${iceland.className}`,
-    HoverBorderGradient
-  )}
->
-  Join Community
-</Link>
+            </a>
 
+            <a
+              href="https://chat.whatsapp.com/DNTw4OEGO280XF0bDpvraH"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${iceland.className} h-12 px-8 bg-transparent text-white text-xl rounded-md border border-[#fc6b32] hover:bg-[#fc6b32]/10 transition-all duration-300 shadow-[0_0_10px_rgba(252,107,50,0.3)] hover:shadow-[0_0_15px_rgba(252,107,50,0.5)] flex items-center justify-center`}
+            >
+              Join Community
+            </a>
           </div>
 
           {/* Countdown Timer - Fixed Separation Issue */}
           <div className="relative flex justify-center items-center -mt-12">
-
             {/* Background Image & Countdown Wrapper */}
             <div className="relative w-[320px] h-[320px] flex items-center justify-center">
               {/* Background Image */}
-              <Image
-                src="/images/countdown-bg1.png"
-                alt="Countdown Background"
-                fill
-                className="object-contain mt-6"
-              />
-              
+              <Image src="/images/countdown-bg1.png" alt="Countdown Background" fill className="object-contain mt-6" />
+
               {/* Countdown Positioned Absolutely Inside */}
-              <div
-                className={`absolute flex items-center justify-center ${iceland.className}`}
-              >
+              <div className={`absolute flex items-center justify-center ${iceland.className}`}>
                 <Countdown />
               </div>
             </div>
@@ -112,5 +85,6 @@ export function HeroSection() {
         </motion.div>
       </div>
     </section>
-  );
+  )
 }
+

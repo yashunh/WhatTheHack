@@ -6,6 +6,8 @@ import { AuthProvider } from "@/context/auth"
 import "@/app/globals.css"
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
+import { Analytics } from "@vercel/analytics/react";
+
 
 const iceland = Iceland({ subsets: ["latin"], weight: "400" })
 
@@ -31,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${iceland.className} min-h-screen bg-background text-foreground dark`}>
+      <Analytics />
         <AuthProvider>
           <SiteHeader />
           {children}

@@ -10,7 +10,7 @@ export function PrizePoolSection() {
           <div className="absolute inset-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.3),transparent)]" />
 
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-5xl sm:text-7xl font-bold text-center mb-12">Prize Pool</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex justify-center gap-8">
           {["Grand Prize", "1st Runner-Up", "2nd Runner-Up"].map((title, index) => (

@@ -29,7 +29,7 @@ export function ClaimBadgeSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-7xl font-bold mb-12 text-center"
+          className="text-7xl font-bold mb-12 text-center "
         >
           Claim Your Badge
         </motion.h2>
