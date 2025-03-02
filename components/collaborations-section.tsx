@@ -10,10 +10,16 @@ const collaborators = [
 
 export function CollaborationsSection() {
   return (
-    <section id="collaborations" className="relative py-24 bg-background">
-      <div className="container mx-auto px-4">
+    <section 
+      id="collaborations" 
+      className="relative py-24 w-screen overflow-hidden bg-background"
+    >
+      {/* Full-screen width Radial Gradient Background */}
+      <div className="absolute inset-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.3),transparent)]" />
+
+      <div className="w-full max-w-screen-2xl mx-auto px-8">
         <h2 className="text-7xl font-bold text-center mb-16">Our Collaborators</h2>
-        <div className="flex justify-center items-center gap-16">
+        <div className="flex justify-center items-center gap-16 flex-wrap">
           {collaborators.map((collaborator, index) => (
             <div key={index} className="flex flex-col items-center">
               <Image

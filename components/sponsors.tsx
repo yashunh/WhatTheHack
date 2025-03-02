@@ -11,6 +11,9 @@ const sponsors = [
 export function SponsorsSection() {
   return (
     <section id="sponsors" className="relative py-16 bg-background">
+                <div className="absolute inset-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.3),transparent)]" />
+
+
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-7xl font-bold bg-clip-text bg-gradient-to-r from-[#ea623e] via-[#934d76] to-[#632182] mb-12">
           Our Sponsors

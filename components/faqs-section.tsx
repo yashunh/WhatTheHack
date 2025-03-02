@@ -18,22 +18,12 @@ export function FAQsSection() {
     {
       question: "Do I need a team to participate?",
       answer:
-        "Yes, you must be a part of a team to participated. Minimum of 3 and maximum of 5 participants are allowed in each team",
-    },
-    {
-      question: "What are the themes for the hackathon?",
-      answer:
-        "The hackathon includes multiple number of themes as listed in the themes section.",
+        "Yes, you must be a part of a team to participate. Minimum of 2 and maximum of 4 participants are allowed in each team",
     },
     {
       question: "What are the judging criteria?",
       answer:
         "Projects will be judged based on innovation, feasibility, technical implementation, user experience, and overall impact. The judging panel will consist of industry experts and mentors.",
-    },
-    {
-      question: "Are there any prizes for the winners?",
-      answer:
-        "Yes! The top teams will receive cash prizes, mentorship opportunities, and recognition from industry leaders. Additional perks like internships, incubation support, and tech credits may also be available.",
     },
     {
       question: "Do I need to bring anything to the event?",

@@ -28,8 +28,12 @@ console.log(themes); // Debugging to ensure images are being passed correctly
 export function ThemeSection() {
   return (
     <>
-      <section id="theme" className="relative flex items-center justify-center min-h-screen w-full bg-background px-6">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.2),transparent)]" />
+      <section 
+        id="theme" 
+        className="relative flex items-center justify-center min-h-screen w-full bg-background px-6 py-24"
+      >
+        <div className="absolute inset-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.3),transparent)]" />
+
         <div className="max-w-[90%] mx-auto z-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -39,17 +43,14 @@ export function ThemeSection() {
           >
             Themes
           </motion.h2>
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="max-w-3xl mx-auto mb-12"
-          >
-            {/* <p className="text-lg text-muted-foreground text-center">
-              Explore the diverse themes of the Open Challenge Hackathon. Each theme presents unique opportunities to innovate
-              and create impactful solutions.
-            </p> */}
-          </motion.div>
+          />
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-20 justify-items-center max-w-[97%] mx-auto">
             {themes.map((theme, index) => (
               <motion.div
@@ -62,16 +63,15 @@ export function ThemeSection() {
                 <GlareCard className="h-full hover:from-gray-900/60 hover:to-purple-900/40 transition-all duration-300">
                   <CardContent className="p-6 h-full flex flex-col justify-center items-center text-center space-y-4">
                     
-                  <Image 
-  src={theme.image} 
-  alt={theme.name} 
-  width={200}  // Increased width
-  height={200} // Increased height
-  className="w-48 h-48 object-contain" // Increased size using Tailwind
-/>
+                    <Image 
+                      src={theme.image} 
+                      alt={theme.name} 
+                      width={200}  
+                      height={200} 
+                      className="w-48 h-48 object-contain"
+                    />
 
                     <h3 className="text-2xl font-semibold">{theme.name}</h3>
-                    {/* <p className="text-md text-muted-foreground">{theme.description}</p> */}
                   </CardContent>
                 </GlareCard>
               </motion.div>

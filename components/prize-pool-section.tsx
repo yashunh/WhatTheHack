@@ -5,7 +5,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export function PrizePoolSection() {
   return (
-    <section id="prize-pool" className="relative py-16 bg-background">
+    <section id="prize-pool" 
+    className="relative py-24 w-screen overflow-hidden bg-background">
+          <div className="absolute inset-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.3),transparent)]" />
+
+
       <div className="container mx-auto px-4">
         <h2 className="text-5xl sm:text-7xl font-bold text-center mb-12">Prize Pool</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex justify-center gap-8">
