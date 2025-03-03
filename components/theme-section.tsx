@@ -12,15 +12,15 @@ type Theme = {
 };
 
 const themes: Theme[] = [
-  { name: "Blockchain & Crypto", description: "Explore the world of decentralized finance and digital currencies.", image: "/images/blockchain.svg" },
-  { name: "Data & Gen-AI", description: "Harness the power of data and artificial intelligence for innovative solutions.", image: "/images/data-ai.svg" },
-  { name: "CTF & Cyber Security", description: "Engage in capture the flag challenges and enhance your cybersecurity skills.", image: "/images/cybersecurity.svg" },
-  { name: "Internet of Things (IoT)", description: "Connect and manage devices in a smart ecosystem.", image: "/images/iot.svg" },
-  { name: "AR / VR", description: "Dive into augmented and virtual reality experiences.", image: "/images/ar-vr.svg" },
-  { name: "Cloud & DevOps", description: "Utilize cloud technologies and DevOps practices for efficient development.", image: "/images/cloud-devops.svg" },
-  { name: "Web & Mobile Dev", description: "Build responsive web and mobile applications.", image: "/images/web-mobile.svg" },
+  { name: "⁠Blockchain & Web3", description: "Explore the world of decentralized finance and digital currencies.", image: "/images/blockchain.svg" },
+  { name: "Artificial Intelligence & Machine Learning", description: "Harness the power of data and artificial intelligence for innovative solutions.", image: "/images/data-ai.svg" },
+  { name: "⁠Cybersecurity & Digital Privacy", description: "Engage in capture the flag challenges and enhance your cybersecurity skills.", image: "/images/cybersecurity.svg" },
+  { name: "⁠Internet of Things (IoT) & Smart Tech", description: "Connect and manage devices in a smart ecosystem.", image: "/images/iot.svg" },
+  { name: "⁠Augmented & Virtual Reality", description: "Dive into augmented and virtual reality experiences.", image: "/images/ar-vr.svg" },
+  { name: "Cloud Computing or Edge Computing", description: "Utilize cloud technologies and DevOps practices for efficient development.", image: "/images/cloud-devops.svg" },
+  { name: "Web & Mobile App Development", description: "Build responsive web and mobile applications.", image: "/images/web-mobile.svg" },
   { name: "Open Innovation", description: "Collaborate and innovate through open-source projects.", image: "/images/open-innovation.svg" },
-  { name: "Geo AI", description: "Apply artificial intelligence to geographic data for insightful analysis.", image: "/images/geo-ai.svg" }
+  { name: "Geo AI & Location Intelligence", description: "Apply artificial intelligence to geographic data for insightful analysis.", image: "/images/geo-ai.svg" }
 ];
 
 console.log(themes); // Debugging to ensure images are being passed correctly

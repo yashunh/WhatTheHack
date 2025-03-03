@@ -39,7 +39,7 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-md font-semibold">Get in Touch</h3>
             <ul className="space-y-2">
-              <li className="text-md text-muted-foreground">Email: scifiinnovationclub@gmail.com</li>
+              <li className="text-md text-muted-foreground">Email: whatthehack.official@gmail.com</li>
               {/* <li className="text-md text-muted-foreground">Phone: +1 (555) 123-4567</li> */}
               <li className="text-md text-muted-foreground">Chandigarh University, Mohali, Punjab 140413</li>
             </ul>
@@ -54,7 +54,6 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-border/40 text-center">
-          <p className="text-md text-muted-foreground">© 2025. Created by Ashini L J</p>
         </div>
       </div>
     </footer>

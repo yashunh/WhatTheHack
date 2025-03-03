@@ -51,7 +51,7 @@ export function HeroSection() {
           {/* WhatsApp Join Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6 mb-8">
             <a
-              href="https://chat.whatsapp.com/DNTw4OEGO280XF0bDpvraH"
+              href="https://wthscifi.devfolio.co/"
               target="_blank"
               rel="noopener noreferrer"
               className={`${iceland.className} bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 h-12 px-8 text-xl rounded-md transition-all duration-300 border border-black-400]] flex items-center justify-center`}
@@ -87,4 +87,3 @@ export function HeroSection() {
     </section>
   )
 }
-

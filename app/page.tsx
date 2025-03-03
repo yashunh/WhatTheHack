@@ -2,7 +2,7 @@
 
 import { HeroSection } from "@/components/hero-section"
 import { ClaimBadgeSection } from "@/components/claim-badge-section"
-import { SponsorsSection } from "@/components/sponsors"
+// import { SponsorsSection } from "@/components/sponsors"
 import { CollaborationsSection } from "@/components/collaborations-section"
 import { PrizePoolSection } from "@/components/prize-pool-section"
 import { AboutSection } from "@/components/about-section"
@@ -20,7 +20,7 @@ export default function Home() {
       {/* <DigitalAvatarSection /> */}
       <AboutSection />
       <ThemeSection />
-      <SponsorsSection />
+      {/* <SponsorsSection /> */}
       <CollaborationsSection />
       <PrizePoolSection />
 
