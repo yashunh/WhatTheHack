@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 
 export function TeamSection() {
   const facultyCoordinators = [
-    { name: "Dr. Sartajvir Singh", role: "Faculty Coordinator", image: "/images/sartajvir-sir.jpg" },
+    { name: " Prof. (Dr.) Sartajvir Singh", role: "Faculty Coordinator", image: "/images/sartajvir-sir.jpg" },
     { name: "Prof. (Dr.) Abhishek Kumar Pandey", role: "Faculty Coordinator", image: "/images/abhishek-sir.jpeg" },
   ]
 

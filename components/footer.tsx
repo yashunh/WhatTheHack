@@ -54,6 +54,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-border/40 text-center">
+        <p>© Created by Sci-Fi Innovation Team 2025</p>
         </div>
       </div>
     </footer>
