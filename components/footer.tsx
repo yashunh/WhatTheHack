@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -40,24 +40,37 @@ export function Footer() {
             <h3 className="text-md font-semibold">Get in Touch</h3>
             <ul className="space-y-2">
               <li className="text-md text-muted-foreground">Email: whatthehack.official@gmail.com</li>
-              {/* <li className="text-md text-muted-foreground">Phone: +1 (555) 123-4567</li> */}
               <li className="text-md text-muted-foreground">Chandigarh University, Mohali, Punjab 140413</li>
             </ul>
           </div>
           <div className="space-y-4">
             <h3 className="text-md font-semibold">Follow Us</h3>
             <ul className="space-y-2">
-              <li className="text-md text-muted-foreground">Instagram: @scifiinnovationclub</li>
-              {/* <li className="text-md text-muted-foreground">Facebook: /reflectapp</li> */}
-              <li className="text-md text-muted-foreground">LinkedIn: scifiinnovationclub</li>
+              <li>
+                <Link 
+                  href="https://www.instagram.com/scifiinnovationclub?igsh=MXJva2VjNHIxbHJxNQ%3D%3D&utm_source=qr" 
+                  target="_blank" 
+                  className="text-md text-muted-foreground hover:text-primary"
+                >
+                  Instagram: @scifiinnovationclub
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="https://www.linkedin.com/company/sci-fi-innovation-club/posts/?feedView=all" 
+                  target="_blank" 
+                  className="text-md text-muted-foreground hover:text-primary"
+                >
+                  LinkedIn: scifiinnovationclub
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-border/40 text-center">
-        <p>© Created by Sci-Fi Innovation Team 2025</p>
+          <p>© Created by Sci-Fi Innovation Team 2025</p>
         </div>
       </div>
     </footer>
-  )
+  );
 }
-

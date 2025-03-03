@@ -104,7 +104,7 @@ export function ClaimBadgeSection() {
                   >
                     Claim Your Badge
                   </Button>
-                  <p>*Only particpants who will be physically present at the venue can claim this digital badge.</p>
+                  <p>*Note: Only particpants who will be physically present at the venue can claim this digital badge.</p>
                 </form>
               </CardContent>
             </Card>
