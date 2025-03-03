@@ -18,7 +18,7 @@ export function FAQsSection() {
     {
       question: "Do I need a team to participate?",
       answer:
-        "Yes, you must be a part of a team to participate. Minimum of 2 and maximum of 4 participants are allowed in each team",
+        "Yes, you must be a part of a team to participate. Minimum of 2 and maximum of 5 participants are allowed in each team",
     },
     {
       question: "What are the judging criteria?",
