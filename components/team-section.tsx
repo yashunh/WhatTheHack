@@ -24,7 +24,7 @@ export function TeamSection() {
   ]
 
   return (
-    <section id="our-team" className="relative flex items-center justify-center min-h-screen bg-background pt-20">
+    <section id="our-team" className="relative flex items-center justify-center w-full min-h-screen bg-background pt-20">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.2),transparent)]" />
       <div className="container mx-auto px-6 z-10 text-center">
         <motion.h2
