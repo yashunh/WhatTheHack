@@ -40,6 +40,7 @@ export function ClaimBadgeSection() {
             transition={{ duration: 0.8 }}
             className="w-full md:w-1/2 max-w-md"
           >
+            
             <Card className="bg-[linear-gradient(to_bottom_right,rgba(99,33,130,0.2),rgba(234,98,62,0.2),rgba(147,77,118,0.2))] text-white shadow-lg border border-black">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-center">Participant Information</CardTitle>
@@ -103,6 +104,7 @@ export function ClaimBadgeSection() {
                   >
                     Claim Your Badge
                   </Button>
+                  <p>*Only particpants who will be physically present at the venue can claim this digital badge.</p>
                 </form>
               </CardContent>
             </Card>
