@@ -41,7 +41,7 @@ export function TeamSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-lg text-muted-foreground text-white"
         >
-          This event is organized by the dedicated members of the Sci-Fi Innovation Club. We extend our heartfelt gratitude to all the core members for their unwavering hard work and invaluable contributions.
+          This event is organized by the dedicated members of the Sci-Fi Innovation Club in collaboration with C Square, CypherLock and Chandigarh University Engineering Community. We extend our heartfelt gratitude to all the core members for their unwavering hard work and invaluable contributions.
         </motion.p>
 
         {/* Faculty Coordinators Section */}

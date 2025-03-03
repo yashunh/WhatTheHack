@@ -74,7 +74,7 @@ export function HeroSection() {
             {/* Background Image & Countdown Wrapper */}
             <div className="relative w-[320px] h-[320px] flex items-center justify-center">
               {/* Background Image */}
-              <Image src="/images/countdown-bg1.png" alt="Countdown Background" fill className="object-contain mt-6" />
+              <Image src="/images/registration-ends.png" alt="Countdown Background" fill className="object-contain mt-6" />
 
               {/* Countdown Positioned Absolutely Inside */}
               <div className={`absolute flex items-center justify-center ${iceland.className}`}>

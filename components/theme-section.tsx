@@ -76,7 +76,7 @@ export function ThemeSection() {
         </div>
 
         {/* Centered Last Two Cards */}
-        <div className="flex flex-col md:flex-row justify-center items-center gap-10 mt-12">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-20 mt-12">
           {specialThemes.map((theme, index) => (
             <motion.div
               key={theme.name}
