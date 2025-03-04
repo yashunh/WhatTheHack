@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
+import { contact } from "@/app/actions/contact"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -86,12 +87,16 @@ export function ContactSection() {
                     className="bg-background text-xl py-3"
                   />
                 </div>
-                <Button 
-  type="submit" 
-  className="w-full bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-xl py-6"
->
-  Send Message
-</Button>
+                <Button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-xl py-6"
+                  onClick={async()=>{
+                    const response = await contact(formData)
+                    console.log(response)
+                  }}
+                >
+                  Send Message
+                </Button>
 
               </form>
             </CardContent>
